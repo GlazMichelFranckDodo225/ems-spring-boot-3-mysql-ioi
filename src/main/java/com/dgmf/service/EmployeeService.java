@@ -8,8 +8,12 @@ import java.util.List;
 
 public interface EmployeeService {
     List<EmployeeDtoResponse> getAllEmployees();
-    void saveEmployee(EmployeeDtoRequest employeeDtoRequest);
+    EmployeeDtoResponse saveEmployee(EmployeeDtoRequest employeeDtoRequest);
     EmployeeDtoResponse getEmployeeById(Long employeeDtoRequestId);
+    EmployeeDtoResponse updateEmployeeById(
+            Long employeeDtoRequestId,
+            EmployeeDtoRequest employeeDtoRequest
+    );
     void deleteEmployeeById(Long employeeDtoRequestId);
     Page<EmployeeDtoResponse> findPaginated(
             int pageNo, int pageSize, String sortField, String sortDirection
